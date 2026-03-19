@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contatos teste for</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Lista de Contatos</h1>
+    <input type="text"  placeholder="Digite o nome do contato">
+    <button>Pesquisar Contato</button>
+    <p>o contato aparecerá aqui</p>
+
+
+</body>
+
+
+<script>
+
+    const butao = document.querySelector('button');
+    const input = document.querySelector('input');
+    const paragrafo = document.querySelector('p');
+
+    const contatos = [ 
+        { name: 'João', Number: '123456789' },
+        { name: 'Luane', Number: '987654321' },
+        { name: 'Pedro', Number: '555555555' },
+        { name: 'Luiz', Number: '111111111' },
+        { name: 'Elenise', Number: '222222222' },
+        { name: 'Solano', Number: '33333333333' }
+    ];
+
+    butao.addEventListener('click', function() {
+        for (let i = 0; i < contatos.length; i++) {
+            if (input.value.toLowerCase() === contatos[i].name.toLowerCase()) {
+                paragrafo.textContent = `Contato encontrado: ${contatos[i].name} - ${contatos[i].Number}`;
+                break;
+            }
+                else {
+                    paragrafo.textContent = 'Contato não encontrado.';
+                }
+        }
+       
+    });
+
+
+
+
+
+
+</script>
+
+</html>
